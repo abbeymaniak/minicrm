@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\RoleEnum;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
@@ -48,7 +49,7 @@ class UserFactory extends Factory
     public function config(): static
     {
         return $this->afterCreating(function(User $user) {
-            $user->assignRole('user');
+            $user->assignRole( RoleEnum::USER);
 
         });
     }
