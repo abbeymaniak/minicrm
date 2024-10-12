@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Users') }}
+            {{ __('Clients') }}
         </h2>
     </x-slot>
 
@@ -10,29 +10,29 @@
             <div class="container w-full md:w-4/5 xl:w-full  mx-auto px-2 bg-white py-5">
 
 		<!--Card-->
-        <a href="{{ route('users.create') }}" class="underline my-3 pl-4">Add new User</a>
+        <a href="{{ route('clients.create') }}" class="underline my-3 pl-4">Add new Client</a>
 		<div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow ">
 
 
 			<table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
 				<thead>
 					<tr>
-						<th>first Name</th>
-						<th>Last Name</th>
-						<th>Email</th>
+						<th>Company</th>
+						<th>Vat</th>
+						<th>Address</th>
 						<th>edit / delete </th>
 					</tr>
 				</thead>
 				<tbody>
-                    @foreach($users as $user)
+                    @foreach($clients as $client)
                     <tr>
-                        <td>{{ $user->first_name }}</td>
-                        <td>{{ $user->last_name }}</td>
-                        <td>{{ $user->email }}</td>
+                        <td>{{ $client->company_name }}</td>
+                        <td>{{ $client->company_vat }}</td>
+                        <td>{{ $client->company_address }}</td>
                         <td>
-                            <a href="{{ route('users.edit', $user) }}" class="btn btn
-                                btn-primary">Edit</a>
-                                <form action="{{ route('users.destroy', $user) }}" method="POST"
+                            <a href="{{ route('clients.edit', $client) }}" class="btn btn
+                                btn-primary">Edit</a> |
+                                <form action="{{ route('clients.destroy', $client) }}" method="POST"
                                     style="display: inline-block;" onsubmit="return confirm('are you sure?')" class="text-red-500">
                                     @csrf
                                     @method('DELETE')
@@ -48,7 +48,7 @@
 
 
             <div class="mt-4">
-                {{ $users->links() }}
+                {{ $clients->links() }}
             </div>
 		</div>
 		<!--/Card-->
