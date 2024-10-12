@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
-use App\RoleEnum;
+use App\Enum\RoleEnum;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;

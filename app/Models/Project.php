@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enum\ProjectStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -20,5 +21,12 @@ class Project extends Model
     {
 
         return $this->belongsTo(Client::class);
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'status' => ProjectStatus::class,
+        ];
     }
 }
