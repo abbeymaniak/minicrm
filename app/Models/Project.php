@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enum\ProjectStatus;
+use App\Enums\ProjectStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -11,6 +11,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Project extends Model
 {
     use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+
+        'title',
+        'description',
+        'user_id',
+        'client_id',
+        'deadline_at',
+        'status',
+    ];
 
     public function user(): BelongsTo
     {

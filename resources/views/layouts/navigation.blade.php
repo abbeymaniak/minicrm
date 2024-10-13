@@ -16,7 +16,7 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                     @role( \App\RoleEnum::ADMIN)
+                     @role( \App\Enums\RoleEnum::ADMIN)
                      <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
                         {{ __('Users') }}
                     </x-nav-link>
@@ -24,6 +24,10 @@
 
                       <x-nav-link :href="route('clients.index')" :active="request()->routeIs('clients.*')">
                         {{ __('Clients') }}
+                    </x-nav-link>
+
+                     <x-nav-link :href="route('projects.index')" :active="request()->routeIs('projects.*')">
+                        {{ __('Projects') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -81,7 +85,7 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
 
-            @role( \App\RoleEnum::ADMIN)
+            @role( \App\Enums\RoleEnum::ADMIN)
               <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
                 {{ __('Users') }}
             </x-responsive-nav-link>
@@ -89,6 +93,10 @@
 
              <x-responsive-nav-link :href="route('clients.index')" :active="request()->routeIs('clients.*')">
                 {{ __('Clients') }}
+            </x-responsive-nav-link>
+
+             <x-responsive-nav-link :href="route('projects.index')" :active="request()->routeIs('projects.*')">
+                {{ __('Projects') }}
             </x-responsive-nav-link>
         </div>
 
