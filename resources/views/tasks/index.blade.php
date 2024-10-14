@@ -55,7 +55,7 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
                                     <a href="{{ route('tasks.edit', $task) }}" class="underline">Edit</a>
-                                    {{-- @can(\App\Enums\PermissionEnum::DELETE_TASKS->value) --}}
+                                    @can(\App\Enums\PermissionEnum::DELETE_TASKS->value)
                                     |
                                     <form action="{{ route('tasks.destroy', $task) }}"
                                           method="POST"
@@ -65,7 +65,7 @@
                                         @csrf
                                         <button type="submit" class="text-red-500 underline">Delete</button>
                                     </form>
-                                    {{-- @endcan --}}
+                                    @endcan
                                 </td>
                             </tr>
                         @endforeach

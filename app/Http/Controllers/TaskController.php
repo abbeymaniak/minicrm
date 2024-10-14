@@ -56,7 +56,7 @@ class TaskController extends Controller
 
     public function destroy(Task $task): RedirectResponse
     {
-        // Gate::authorize(PermissionEnum::DELETE_TASKS->value);
+        Gate::authorize(PermissionEnum::DELETE_TASKS->value);
 
         $task->delete();
 

@@ -53,7 +53,7 @@ class ProjectController extends Controller
 
     public function destroy(Project $project): RedirectResponse
     {
-        // Gate::authorize(PermissionEnum::DELETE_PROJECTS->value);
+        Gate::authorize(PermissionEnum::DELETE_PROJECTS->value);
 
         $project->delete();
 

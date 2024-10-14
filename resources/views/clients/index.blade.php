@@ -31,7 +31,12 @@
                         <td>{{ $client->company_address }}</td>
                         <td>
                             <a href="{{ route('clients.edit', $client) }}" class="btn btn
-                                btn-primary">Edit</a> |
+                                btn-primary">Edit</a>
+
+                                @can(\App\Enums\PermissionEnum::DELETE_CLIENTS->value)
+
+
+                                |
                                 <form action="{{ route('clients.destroy', $client) }}" method="POST"
                                     style="display: inline-block;" onsubmit="return confirm('are you sure?')" class="text-red-500">
                                     @csrf
@@ -40,7 +45,9 @@
                                     </form>
                                     </td>
                                     </tr>
+                                    @endcan
                                     @endforeach
+
 
 				</tbody>
 
