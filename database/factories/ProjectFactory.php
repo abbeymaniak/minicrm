@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Models\User;
 use App\Models\Client;
-use App\Enum\ProjectStatus;
+use App\Enums\ProjectStatus;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
